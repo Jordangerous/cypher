@@ -1,5 +1,3 @@
-markdown
-```markdown
 # Cypher Project
 
 Cypher is a command-line interface (CLI) tool designed to facilitate schema conversion between different formats, including GraphQL, JSON, Proto3, SQL, XSD, and YAML. This directory serves as the core of the Cypher project, containing all the source code and related components required for the tool's functionality.
@@ -50,7 +48,7 @@ The Cypher project is organized into several key directories and files:
 
 ## Directories and Files
 
-### 1. `cmd/`
+### `cmd/`
 
 This directory contains the main CLI commands that power the Cypher tool. Each command is implemented as a separate file under the `cypher/` subdirectory:
 
@@ -59,14 +57,14 @@ This directory contains the main CLI commands that power the Cypher tool. Each c
 - **`list.go`**: Lists all supported schema formats.
 - **`version.go`**: Displays the current version of the Cypher tool.
 
-### 2. `internal/`
+### `internal/`
 
 The `internal` directory holds the core logic for parsing and converting schema files. It is organized into two subdirectories:
 
 - **`parser/`**: Contains files for parsing each schema type (GraphQL, JSON, Proto3, SQL, XSD, and YAML).
 - **`converter/`**: Handles the conversion logic between different schema formats.
 
-### 3. `pkg/`
+### `pkg/`
 
 The `pkg` directory contains reusable data structures that represent different schema formats. This directory is organized into the `schema/` package, which defines types for each schema format:
 
@@ -79,7 +77,7 @@ The `pkg` directory contains reusable data structures that represent different s
 
 These shared data structures are used by the parsers and converters for handling schema representations consistently across the tool.
 
-### 4. `samples/`
+### `samples/`
 
 The `samples` directory includes example files for each schema type. These files are useful for testing the tool's functionality and demonstrating how different schema formats are handled:
 
@@ -90,11 +88,11 @@ The `samples` directory includes example files for each schema type. These files
 - **example.yaml**: Sample YAML schema
 - **example.xsd**: Sample XSD schema
 
-### 5. `docs/`
+### `docs/`
 
 The `docs` directory contains detailed documentation about the Cypher project. It includes information on how to use the tool, how it works, and how to contribute to its development. For more details, check the [docs/README.md](../docs/README.md).
 
-### 6. `go.mod` and `go.sum`
+### `go.mod` and `go.sum`
 
 These files define the module dependencies for the Cypher project. They are generated and managed by the Go module system to ensure that all dependencies are properly versioned and consistent.
 
@@ -134,13 +132,13 @@ If you encounter any issues or have ideas for new features, please open an issue
 
 Cypher is open-source software licensed under the MIT License. See the LICENSE file for more details.
 
-## Contact
-
-For any questions or support, please reach out to support@haptixllc.com.
-
 ## Additional Resources
 
 - [Go Documentation](https://golang.org/doc/)
 - [Cobra CLI Documentation](https://github.com/spf13/cobra)
-- Schema Format References: Official documentation links for GraphQL, JSON, Proto3, SQL, XSD, and YAML.
-```
+- [GraphQL Documentation](https://graphql.org/learn/)
+- [JSON Schema Documentation](https://json-schema.org/understanding-json-schema/)
+- [Protocol Buffers Documentation](https://developers.google.com/protocol-buffers/docs/overview)
+- [SQL Documentation](https://www.w3schools.com/sql/)
+- [XML Schema Definition (XSD) Documentation](https://www.w3.org/TR/xmlschema11-1/)
+- [YAML Documentation](https://yaml.org/spec/)
