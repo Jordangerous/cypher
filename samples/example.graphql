@@ -1,0 +1,28 @@
+type Person {
+  id: ID!
+  name: String!
+  age: Int
+  email: String
+  isActive: Boolean
+  createdAt: DateTime
+  tags: [String]
+  address: Address
+}
+
+type Address {
+  street: String
+  city: String
+  postalCode: String
+}
+
+type Group {
+  id: ID!
+  name: String!
+  members: [Person] # 1:N Relationship
+}
+
+type Organization {
+  id: ID!
+  name: String!
+  employees: [Person] # N:N Relationship through Group
+}

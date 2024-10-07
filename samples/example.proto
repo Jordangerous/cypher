@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+message Person {
+  string id = 1;
+  string name = 2;
+  int32 age = 3;
+  string email = 4;
+  bool isActive = 5;
+  string createdAt = 6;  // DateTime in string format
+  repeated string tags = 7;
+  Address address = 8;
+}
+
+message Address {
+  string street = 1;
+  string city = 2;
+  string postalCode = 3;
+}
+
+message Group {
+  string id = 1;
+  string name = 2;
+  repeated Person members = 3;  // 1:N Relationship
+}
+
+message Organization {
+  string id = 1;
+  string name = 2;
+  repeated Person employees = 3;  // N:N Relationship through Group
+}

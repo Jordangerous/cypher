@@ -1,0 +1,48 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- Definition of the main entity 'Person' -->
+    <xs:element name="Person" type="PersonType"/>
+
+    <xs:complexType name="PersonType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="age" type="xs:int" minOccurs="0"/>
+            <xs:element name="email" type="xs:string" minOccurs="0"/>
+            <xs:element name="isActive" type="xs:boolean" minOccurs="0"/>
+            <xs:element name="createdAt" type="xs:dateTime" minOccurs="0"/>
+            <xs:element name="tags" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="address" type="AddressType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definition of the 'Address' entity -->
+    <xs:complexType name="AddressType">
+        <xs:sequence>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="postalCode" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definition of the 'Group' entity representing a 1:N relationship -->
+    <xs:element name="Group" type="GroupType"/>
+
+    <xs:complexType name="GroupType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="members" type="PersonType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Definition of the 'Organization' entity representing an N:N relationship -->
+    <xs:element name="Organization" type="OrganizationType"/>
+
+    <xs:complexType name="OrganizationType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="employees" type="PersonType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,55 @@
+{
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "age": { "type": "integer" },
+    "email": { "type": "string" },
+    "isActive": { "type": "boolean" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": { "type": "string" },
+        "city": { "type": "string" },
+        "postalCode": { "type": "string" }
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": { "": "#/definitions/Group" }
+    },
+    "organization": {
+      "": "#/definitions/Organization"
+    }
+  },
+  "definitions": {
+    "Group": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "members": {
+          "type": "array",
+          "items": { "": "#/definitions/Person" }
+        }
+      }
+    },
+    "Organization": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "employees": {
+          "type": "array",
+          "items": { "": "#/definitions/Person" }
+        }
+      }
+    }
+  }
+}
